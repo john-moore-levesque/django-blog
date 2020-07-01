@@ -1,20 +1,49 @@
 {% extends "base.html" %}
+{% block title %}
+  {% if author and not category %}
+    {{ author | capfirst }}'s Blog
+  {% elif category and not author %}
+    Posts tagged {{ category }}
+  {% elif category and author %}
+    Posts by {{ author | capfirst }} tagged {{ category }}
+  {% else %}
+    Blog
+  {% endif %}
+{% endblock %}
+
 {% block page_content %}
 <div class="col-md-8 offset-md-2">
-    <h1>{{ category | title }}</h1>
+  {% if author and not category %}
+    <h1>{{ author | capfirst }}'s Blog</h1>
+  {% elif category and not author %}
+    <h1>Posts tagged {{ category }}</h1>
+  {% elif category and author %}
+    <h1>Posts by {{ author | capfirst }} tagged {{ category }}</h1>
+  {% else %}
+    <h1>Home</h1>
+  {% endif %}
     <hr>
     {% for post in posts %}
-        <h2><a href="{% url 'blog_detail' post.pk%}">{{ post.title }}</a></h2>
+
+        <h2><a href="{% url 'blog_detail' post.author post.slug%}">{{ post.title }}</a></h2>
         <small>
-            {{ post.created_on.date }} by <b>{{ post.author }}</b>|&nbsp;
+            {{ post.created_on.date }} by <b>{{ post.author | capfirst }}</b> |&nbsp;
             Categories:&nbsp;
-            {% for category in post.categories.all %}
-            <a href="{% url 'blog_category' category.name %}">
-                {{ category.name }}
+            {% for category in post.category.all %}
+            {% if not author %}
+              <a href="{% url 'blog_category' category.name %}">
+            {% else %}
+              <a href="{% url 'blog_author_category' author category.name %}">
+            {% endif %}
+              {{ category.name }}
             </a>&nbsp;
             {% endfor %}
         </small>
-        <p>{{ post.body | slice:":400" }}...</p>
+        {% if empty %}
+          <i>No posts to display.</i>
+        {% else %}
+          <p>{{ post.body | safe | slice:":400" }}...</p>
+          {% endif %}
     {% endfor %}
 </div>
 {% endblock %}

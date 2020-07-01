@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}
+MooreLevesque.com
+{% endblock %}
+{% load static %}
+{% block page_content %}
+<div class="col-md-8 offset-md-2">
+  <h1>The Moore-Levesques</h1>
+  <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <picture>
+        <img class="d-block w-100" src="{% static 'images/slide0.jpg' %}" alt="First slide" style="object-fit: cover;">
+        </picture>
+      </div>
+      <div class="carousel-item">
+        <picture>
+        <img class="d-block w-100" src="{% static 'images/slide1.jpg' %}" alt="Second slide" style="object-fit: cover;">
+        </picture>
+      </div>
+      <div class="carousel-item">
+        <picture>
+        <img class="d-block w-100" src="{% static 'images/slide2.jpg' %}" alt="Second slide" style="object-fit: cover;">
+        </picture>
+      </div>
+      <div class="carousel-item">
+        <picture>
+        <img class="d-block w-100" src="{% static 'images/slide3.jpg' %}" alt="Second slide" style="object-fit: cover;">
+        </picture>
+      </div>
+      <div class="carousel-item">
+        <picture>
+        <img class="d-block w-100" src="{% static 'images/slide4.jpg' %}" alt="Second slide" style="object-fit: cover;">
+        </picture>
+      </div>
+      <div class="carousel-item">
+        <picture>
+        <img class="d-block w-100" src="{% static 'images/slide5.jpg' %}" alt="Second slide"style="object-fit: cover;">
+        </picture>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

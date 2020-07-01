@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+Delete Post
+{% endblock %}
+{% block page_content %}
+<div class="col-md-8 offset md-2">
+<h3>Delete Post</h3>
+<p>Are you sure you want to delete <i>{{ post.title }}</i>?
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form|crispy|safe }}
+  {{ form.media | safe }}
+  <button type="submit">Post</button>
+  </form>
+  </div>
+{% endblock %}
