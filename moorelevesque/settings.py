@@ -188,5 +188,7 @@ CKEDITOR_CONFIGS = {
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-CKEDITOR_UPLOAD_PATH = "static/images/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
+CKEDITOR_UPLOAD_PATH = "images/"
 CKEDITOR_IMAGE_BACKEND = "pillow"

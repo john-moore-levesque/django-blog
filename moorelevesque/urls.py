@@ -29,4 +29,8 @@ urlpatterns = [
     path('user/', include("user.urls")),
     path('ckeditor/', include("ckeditor_uploader.urls")),
     path('about/', views.flatpage, {'url': '/about/'}, name="about"),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT, name="static")
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT, name="static")
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
