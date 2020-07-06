@@ -4,38 +4,83 @@ MooreLevesque.com
 {% endblock %}
 {% load static %}
 {% block page_content %}
-<div class="col-md-8 offset-md-2">
-  <h1>The Moore-Levesques</h1>
+<div class="col-lg-12 content">
+  <div class="header">
+  <h1 class="site-title">The Moore-Levesques</h1>
+  </div>
+
   <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <picture>
-        <img class="d-block w-100" src="{% static 'images/slide0.jpg' %}" alt="First slide" style="object-fit: cover;">
+        <img class="d-block w-100"
+            srcset="{% static 'images/slide0.jpg' %} 300w,
+                {% static 'images/slide0.jpg' %} 600w,
+                {% static 'images/slide0.jpg' %} 1000w,
+                {% static 'images/slide0.jpg' %} 2000w"
+            sizes="(max-width: 800px) 400px, (max0width: 1170px) 600px, 1000px"
+            alt="First slide"
+            style="display: block; margin: auto;">
         </picture>
       </div>
       <div class="carousel-item">
         <picture>
-        <img class="d-block w-100" src="{% static 'images/slide1.jpg' %}" alt="Second slide" style="object-fit: cover;">
+        <img class="d-block w-100"
+            srcset="{% static 'images/slide1.jpg' %} 300w,
+                {% static 'images/slide1.jpg' %} 600w,
+                {% static 'images/slide1.jpg' %} 1000w,
+                {% static 'images/slide1.jpg' %} 2000w"
+            sizes="(max-width: 800px) 400px, (max0width: 1170px) 600px, 1000px"
+            alt="Second slide"
+            style="display: block; margin: auto;">
         </picture>
       </div>
       <div class="carousel-item">
         <picture>
-        <img class="d-block w-100" src="{% static 'images/slide2.jpg' %}" alt="Second slide" style="object-fit: cover;">
+        <img class="d-block w-100"
+            srcset="{% static 'images/slide2.jpg' %} 300w,
+                {% static 'images/slide2.jpg' %} 600w,
+                {% static 'images/slide2.jpg' %} 1000w,
+                {% static 'images/slide2.jpg' %} 2000w"
+            sizes="(max-width: 800px) 400px, (max0width: 1170px) 600px, 1000px"
+            alt="Third slide"
+            style="display: block; margin: auto;">
         </picture>
       </div>
       <div class="carousel-item">
         <picture>
-        <img class="d-block w-100" src="{% static 'images/slide3.jpg' %}" alt="Second slide" style="object-fit: cover;">
+        <img class="d-block w-100"
+            srcset="{% static 'images/slide3.jpg' %} 300w,
+                {% static 'images/slide3.jpg' %} 600w,
+                {% static 'images/slide3.jpg' %} 1000w,
+                {% static 'images/slide3.jpg' %} 2000w"
+            sizes="(max-width: 800px) 400px, (max0width: 1170px) 600px, 1000px"
+            alt="Fourth slide"
+            style="display: block; margin: auto;">
         </picture>
       </div>
       <div class="carousel-item">
         <picture>
-        <img class="d-block w-100" src="{% static 'images/slide4.jpg' %}" alt="Second slide" style="object-fit: cover;">
+        <img class="d-block w-100"
+            srcset="{% static 'images/slide4.jpg' %} 300w,
+                {% static 'images/slide4.jpg' %} 600w,
+                {% static 'images/slide4.jpg' %} 1000w,
+                {% static 'images/slide4.jpg' %} 2000w"
+            sizes="(max-width: 800px) 400px, (max0width: 1170px) 600px, 1000px"
+            alt="Fifth slide"
+            style="display: block; margin: auto;">
         </picture>
       </div>
       <div class="carousel-item">
         <picture>
-        <img class="d-block w-100" src="{% static 'images/slide5.jpg' %}" alt="Second slide"style="object-fit: cover;">
+        <img class="d-block w-100"
+            srcset="{% static 'images/slide5.jpg' %} 300w,
+                {% static 'images/slide5.jpg' %} 600w,
+                {% static 'images/slide5.jpg' %} 1000w,
+                {% static 'images/slide5.jpg' %} 2000w"
+            sizes="(max-width: 800px) 400px, (max0width: 1170px) 600px, 1000px"
+            alt="Sixth slide"
+            style="display: block; margin: auto;">
         </picture>
       </div>
     </div>

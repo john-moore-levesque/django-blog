@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 # Create your views here.
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ["title", "body", "category"]
+    fields = ["title", "image", "body", "category"]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -17,7 +17,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ["title", "body", "category"]
+    fields = ["title", "image", "body", "category"]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -97,7 +97,7 @@ def blog_home(request, slug=None, author=None):
         posts = Post.objects.filter(category__in=category_id)
         context = {"category": category, "posts": posts}
     elif author_id and not category_id:
-        posts = Post.objects.filter(author__in=author_id)
+        posts = Post.objects.filter(author__in=author_id).order_by('-created_on')
         context = {"author": author, "posts": posts}
     else:
         posts = Post.objects.filter(author__in=author_id, category__in=category_id)

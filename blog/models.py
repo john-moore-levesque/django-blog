@@ -35,6 +35,7 @@ class Post(models.Model):
     category = TaggableManager(blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=250, unique=True, blank=True)
+    image = models.ImageField(upload_to="images/", default="images/default.jpg")
 
     def __str__(self):
         return self.title

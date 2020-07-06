@@ -12,7 +12,8 @@
 {% endblock %}
 
 {% block page_content %}
-<div class="col-md-8 offset-md-2">
+<div class="col-lg-12 content">
+  <div class="header">
   {% if author and not category %}
     <h1>{{ author | capfirst }}'s Blog</h1>
   {% elif category and not author %}
@@ -23,6 +24,7 @@
     <h1>Home</h1>
   {% endif %}
     <hr>
+  </div>
     {% for post in posts %}
 
         <h2><a href="{% url 'blog_detail' post.author post.slug%}">{{ post.title }}</a></h2>

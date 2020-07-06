@@ -4,10 +4,13 @@
 {{ post.author | capfirst }} | {{ post.title }}
 {% endblock %}
 {% load crispy_forms_tags %}
-
+{% load static %}
 {% block page_content %}
-<div class="col-md-8 offset-md-2">
+
+<div class="col-lg-12 content">
+  <div class="header">
   <h1>{{ post.title }}</h1>
+  <hr>
   <small>
     {{ post.created_on.date }} by <b>{{ post.author | capfirst }}</b> |&nbsp;
     Categories:&nbsp;
@@ -17,6 +20,16 @@
     </a>&nbsp;
     {% endfor %}
   </small>
+  </div>
+  <div class="blog-image">
+  <picture class="col-lg-12">
+    <img class="blog-image" src="{{ post.image.url }}"
+      srcset="{{ post.image.url }} 300w, {{ post.image.url }} 600w, {{ post.image.url }} 1000w, {{ post.image.url }} 2000w"
+      sizes="(max-width: 800px) 400px, (max-width: 1170px) 600px, 1000px"
+      style="display: block; margin: auto;" >
+  </picture>
+  </div>
+
   {{ post.body | safe | linebreaks }}
   <small>
   </small>

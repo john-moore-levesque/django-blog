@@ -1,0 +1,17 @@
+p {
+  text-align: justify;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  padding-top: 2rem;
+}
+
+.site-title {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
