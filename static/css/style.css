@@ -15,5 +15,44 @@ p {
 }
 
 #homeslide {
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.moorelevesque-nav {
+  background-color: #5f7996;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.flat-image img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.blog-image img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.moorelevesque-nav a {
+  color: rgba(256, 256, 256, 0.85)
+}
+
+.moorelevesque-nav a:hover {
+  color: rgba(256, 256, 256, 0.65);
+}
+
+body {
+  background-color: #f8f5ef;
+}
+
+.moorelevesque-toggler .navbar-toggler-icon {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(239, 189, 130)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.moorelevesque-toggler.navbar-toggler {
+  border-color: rgb(239, 189, 130);
+}
+
+.moorelevesque-toggler:focus {
+  outline: 5px auto rgba(239, 189, 130, 0.5)
 }

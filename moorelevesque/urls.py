@@ -15,20 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.flatpages import views
 
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name="index.html"), name="home"),
     path('admin/', admin.site.urls),
     path('accounts/', include("allauth.urls")),
     path('blog/', include("blog.urls")),
     path('user/', include("user.urls")),
     path('ckeditor/', include("ckeditor_uploader.urls")),
     path('about/', views.flatpage, {'url': '/about/'}, name="about"),
+    path('', views.flatpage, {'url': '/'}, name="/"),
 ]
 
 if settings.DEBUG:
