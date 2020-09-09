@@ -4,11 +4,14 @@
 {% endblock %}
 {% load static %}
 {% block page_content %}
-<div class="col-lg-12 content">
   <div class="header">
-  <h1>{{ flatpage.title }}</h1>
-  <hr>
+    <div class="container">
+  <h1 class="page-title">{{ flatpage.title }}</h1>
   </div>
+  </div>
+  <div class="col-lg-12 content">
+  <div class="container">
   {{ flatpage.content }}
 </div>
 {% endblock %}
+</div>

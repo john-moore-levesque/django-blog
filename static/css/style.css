@@ -3,12 +3,29 @@ p {
 }
 
 .header {
-  text-align: center;
+  text-align: left;
+  background-color: #3F88C5;
 }
 
-.header h1 {
+.header a {
+  color: white;
+}
+
+
+h1.blog-title {
   margin: 0;
-  padding-top: 2rem;
+  padding: 0rem 0rem 1rem;
+  margin-bottom: 1rem;
+}
+
+h1.page-title {
+  margin: 0;
+  padding: 1rem 0rem;
+  margin-bottom: 1rem;
+}
+
+
+h1 {
 }
 
 .site-title {
@@ -16,33 +33,59 @@ p {
 
 #homeslide {
   margin-bottom: 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .moorelevesque-nav {
-  background-color: #5f7996;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #1C3144;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .flat-image img {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .blog-image img {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 
 .moorelevesque-nav a {
-  color: rgba(256, 256, 256, 0.85)
+  color: white;
 }
 
 .moorelevesque-nav a:hover {
   color: rgba(256, 256, 256, 0.65);
 }
 
+.header a:hover {
+  text-decoration: none;
+  color: rgba(256, 256, 256, 0.65);
+
+}
+
+#site-branding {
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.5rem;
+}
+
+#site-branding a:hover {
+  text-decoration: none;
+}
+
 body {
-  background-color: #f8f5ef;
+  font-family: "Roboto", Corbel, Avenir, "Lucida Grande", "Lucida Sans", sans-serif;
+  font-size: 1rem;
+
+}
+
+.navbar-nav {
+  float: right;
+  margin-left: auto!important;
+  margin-right: 0;
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 
 .moorelevesque-toggler .navbar-toggler-icon {
@@ -55,4 +98,16 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32
 
 .moorelevesque-toggler:focus {
   outline: 5px auto rgba(239, 189, 130, 0.5)
+}
+
+.john {
+  background-color: #A2AEBB;
+}
+
+.christa {
+  background-color: #D3C4E3;
+}
+
+.blog-author-block {
+  padding-top: 0.5rem;
 }
