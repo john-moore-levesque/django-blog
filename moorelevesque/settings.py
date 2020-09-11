@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'django.contrib.sitemaps',
     'user',
     'allauth',
     'allauth.account',
@@ -49,7 +50,10 @@ INSTALLED_APPS = [
     'taggit',
     'antispam',
     'antispam.honeypot',
+    'meta',
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

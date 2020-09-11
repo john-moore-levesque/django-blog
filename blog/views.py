@@ -3,12 +3,13 @@ from blog.models import Post
 from blog.forms import CommentForm
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from meta.views import Meta
 
 
 # Create your views here.
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ["title", "image", "body", "category"]
+    fields = ["title", "image", "body", "category", "abstract"]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -17,7 +18,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ["title", "image", "body", "category"]
+    fields = ["title", "image", "body", "category", "abstract"]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -74,7 +75,7 @@ def blog_index(request, author):
 def blog_detail(request, author, slug):
     author = Post.author.get_queryset().filter(username=author).values_list('id', flat=True)
     post = Post.objects.filter(author__in=author).get(slug=slug)
-    return render(request, 'blog_detail.html', {"author": author, "post": post})
+    return render(request, 'blog_detail.html', {"author": author, "post": post, "meta": post.as_meta()})
 
 
 def blog_home(request, slug=None, author=None):

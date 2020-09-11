@@ -44,7 +44,7 @@
 
         <h2><a href="{% url 'blog_detail' post.author post.slug%}">{{ post.title }}</a></h2>
         <small>
-            {{ post.created_on.date }} by <b>{{ post.author | capfirst }}</b> |&nbsp;
+            {{ post.last_modified.date }} by <b>{{ post.author | capfirst }}</b> |&nbsp;
             Categories:&nbsp;
             {% for category in post.category.all %}
             {% if not author %}

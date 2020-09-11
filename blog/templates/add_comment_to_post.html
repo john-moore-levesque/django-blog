@@ -6,11 +6,13 @@ Add a comment
 {% load crispy_forms_tags %}
 
 {% block page_content %}
-<div class="col-lg-12 content">
-  <div class="header">
-<h1>New Comment</h1>
-<hr>
+  <div class="header content-edit">
+    <div class="container">
+<h3>New Comment</h3>
 </div>
+</div>
+<div class="col-lg-12 content">
+  <div class="container">
 <form method="POST" class="post-form">
   {% csrf_token %}
   {{ form|crispy|safe }}
@@ -18,3 +20,4 @@ Add a comment
   </form>
   </div>
   {% endblock %}
+</div>

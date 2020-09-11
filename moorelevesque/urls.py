@@ -18,7 +18,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.flatpages import views
-
+from django.contrib.sitemaps.views import sitemap
+from sitemaps.sitemap import sitemaps
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +29,7 @@ urlpatterns = [
     path('ckeditor/', include("ckeditor_uploader.urls")),
     path('about/', views.flatpage, {'url': '/about/'}, name="about"),
     path('', views.flatpage, {'url': '/'}, name="/"),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]
 
 if settings.DEBUG:

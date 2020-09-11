@@ -18,12 +18,16 @@ h1.blog-title {
   margin-bottom: 1rem;
 }
 
-h1.page-title {
+h3, h1.page-title {
   margin: 0;
   padding: 1rem 0rem;
   margin-bottom: 1rem;
 }
 
+h3.comment-header {
+  margin:0;
+  padding:0;
+}
 
 h1 {
 }
@@ -101,13 +105,34 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32
 }
 
 .john {
-  background-color: #A2AEBB;
+  background-color: #EEC643;
 }
 
 .christa {
-  background-color: #D3C4E3;
+  background-color: #986DB0;
 }
 
 .blog-author-block {
   padding-top: 0.5rem;
+}
+
+.content-edit {
+  background-color: #F64740;
+}
+
+.login {
+  background-color: #941B0C;
+}
+
+.white {
+  color: white;
+}
+
+.add-comment {
+  background-color: #40f6a2;
+  margin: 1rem 0rem;
+}
+
+.add-comment:hover {
+  background-color: #0bdf7d;
 }
