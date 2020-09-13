@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from blog.models import Post
-from blog.forms import CommentForm
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from meta.views import Meta
@@ -44,21 +43,6 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         else:
             return False
-
-
-def add_comment_to_post(request, author, slug):
-    form = CommentForm()
-    post = get_object_or_404(Post, slug=slug)
-    if request.method == "POST":
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.post = post
-            comment.save()
-            return redirect('blog_detail', author=post.author, slug=post.slug)
-        else:
-            form = CommentForm()
-    return render(request, 'add_comment_to_post.html', {'form': form})
 
 
 def blog_categories(request, slug):

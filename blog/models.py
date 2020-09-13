@@ -57,21 +57,3 @@ class Post(ModelMeta, models.Model):
 
     def get_absolute_url(self):
         return reverse('blog_detail', args=[self.author, self.slug])
-
-
-class Comment(models.Model):
-    author = models.CharField(max_length=60)
-    body = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    post = models.ForeignKey('Post', on_delete=models.CASCADE, related_name='comments')
-    slug = models.SlugField(max_length=250, unique=True, blank=True)
-
-    def get_absolute_url(self):
-        return reverse('blog_detail', args=[post.get_absolute_url(), self.slug])
-
-    def save(self, *args, **kwargs):
-        self.slug = get_random_string(32)
-        try:
-            super().save(*args, **kwargs)
-        except IntegrityError:
-            self.save(*args, **kwargs)

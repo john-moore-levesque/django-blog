@@ -1,5 +1,6 @@
 
 {% extends "base.html" %}
+
 {% block title %}
 {{ post.author | capfirst }} | {{ post.title }}
 {% endblock %}
@@ -46,21 +47,7 @@
   {{ post.body | safe | linebreaks }}
   <small>
   </small>
-  <hr>
-  <h3 class="comment-header">Comments</h3>
-  <a class="btn btn-default add-comment" href="{% url 'add_comment_to_post' author=post.author slug=post.slug %}">Add comment</a>
-  {% for comment in post.comments.all %}
-  <p>
-    <small>
-    On {{ comment.created_on.date }}&nbsp;
-    <b>{{ comment.author }}</b> wrote:
-    </small>
-  </p>
-  <p>{{ comment.body }}</p>
-  <hr>
-  {% empty %}
-  <p>No comments yet.</p>
-  {% endfor %}
+
 </div>
 {% endblock %}
 </div>

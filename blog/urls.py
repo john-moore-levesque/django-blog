@@ -9,7 +9,6 @@ urlpatterns = [
     path("<author>/<slug>/", views.blog_detail, name="blog_detail"),
     path("<author>/<slug>/update/", views.PostUpdateView.as_view(), name="blog_update"),
     path("<author>/<slug>/delete/", views.PostDeleteView.as_view(), name="blog_delete"),
-    path("<author>/<slug>/add_comment_to_post", views.add_comment_to_post, name="add_comment_to_post"),
     path("<author>/category/<slug>", views.blog_home, name="blog_author_category"),
     path("category/<slug>", views.blog_home, name="blog_category"),
 ]
