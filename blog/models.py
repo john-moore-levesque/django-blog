@@ -30,7 +30,7 @@ class PostCategory(models.Model):
 
 class Post(ModelMeta, models.Model):
     title = models.CharField(max_length=255)
-    abstract = models.TextField(default="Summary")
+    abstract = models.TextField(default="A blog post on MooreLevesque.com")
     body = RichTextUploadingField()
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
@@ -38,6 +38,8 @@ class Post(ModelMeta, models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=250, unique=True, blank=True)
     image = models.ImageField(upload_to="images/", default="images/default.jpg")
+    imageAlt = models.CharField(max_length=255, default="A sunrise in Jamestown, RI, USA")
+    comments = models.BooleanField(default='True')
     _metadata = {
         'title': 'title',
         'image': 'get_meta_image',

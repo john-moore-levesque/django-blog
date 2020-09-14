@@ -8,7 +8,7 @@ from meta.views import Meta
 # Create your views here.
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ["title", "image", "body", "category", "abstract"]
+    fields = ["title", "image", "imageAlt", "body", "category", "abstract", "comments"]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -17,7 +17,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ["title", "image", "body", "category", "abstract"]
+    fields = ["title", "image", "imageAlt", "body", "category", "abstract", "comments"]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
