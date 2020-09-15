@@ -1,12 +1,9 @@
-FROM centos:latest
+FROM: python:3-alpine
 
-RUN yum update -y
-RUN yum install -y httpd
-RUN yum install -y python38
-RUN yum install -y python38-mod_wsgi
+WORKDIR: /usr/src/app
 
-ENV APACHE_RUN_USER apache
-ENV APACHE_RUN_GROUP apache
-ENV APACHE_LOG_DIR /var/log/apache
+COPY requirement.txt ./
+RUN pip install --no-cache-dir -r requirement.txt
+RUN apk add apache2
 
-EXPOSE 80
+COPY . .
