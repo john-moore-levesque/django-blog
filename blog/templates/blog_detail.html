@@ -35,10 +35,14 @@
   </small>
   </div>
 
+
   <div class="blog-image">
-  <picture class="col-lg-12">
-    <img class="blog-image" src="{{ post.image.url }}"
-      srcset="{{ post.image.url }} 300w, {{ post.image.url }} 600w, {{ post.image.url }} 1000w, {{ post.image.url }} 2000w"
+  <picture>
+    <img class="d-block w-100 blog-image"
+      srcset="{{ post.image.url }} 300w,
+            {{ post.image.url }} 600w,
+            {{ post.image.url }} 1000w,
+            {{ post.image.url }} 2000w"
       sizes="(max-width: 800px) 400px, (max-width: 1170px) 600px, 1000px"
       style="display: block; margin: auto;"
       alt="{{ post.imageAlt }}"
