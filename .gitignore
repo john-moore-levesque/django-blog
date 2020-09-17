@@ -136,5 +136,4 @@ dmypy.json
 local_requirement.txt
 
 # Files
-static
 allstaticfiles
